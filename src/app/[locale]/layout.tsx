@@ -1,6 +1,10 @@
-import { NextIntlClientProvider, useMessages } from 'next-intl';
-import "./globals.css"
-export default function LocaleLayout({ children, params: { locale } }: {
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import "./globals.css";
+import Navbar from "@/components/shared/navbar/Navbar";
+export default function LocaleLayout({
+  children,
+  params: { locale },
+}: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
@@ -10,6 +14,7 @@ export default function LocaleLayout({ children, params: { locale } }: {
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navbar/>
           {children}
         </NextIntlClientProvider>
       </body>
