@@ -1,12 +1,14 @@
-import { useTranslations } from "next-intl";
+import CarCardsGrid from "@/components/pages/home/CarCardsGrid";
+import HeroSection from "@/components/pages/home/HeroSection";
+// import ProductSlider from "@/components/pages/home/ProductSlider";
 
 export default function HomePage() {
-  const t = useTranslations("home");
 
   return (
-    <div className="flex justify-center items-center h-[100vh]">
-      <h1 className="text-4xl">{t("title")}</h1>
-      <p className="text-4xl">{t("description")}</p>
-    </div>
+    <>
+      <HeroSection />
+      {/* <ProductSlider/> */}
+      <CarCardsGrid/>
+    </>
   );
 }
